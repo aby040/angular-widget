@@ -1,0 +1,11 @@
+{
+  "name": "angular-widget",
+  "version": "1.0.0",
+  "description": "built version angular-widget",
+  "main": "angular-widget.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
