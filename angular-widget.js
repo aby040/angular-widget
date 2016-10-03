@@ -80,6 +80,7 @@ angular.module("angularWidgetInternal").directive("ngWidget", [ "$http", "$templ
         scope: {
             src: "=",
             options: "=",
+            isolatedOptions: '=isolatedOptions',
             delay: "@"
         },
         link: function(scope, element) {
@@ -91,6 +92,7 @@ angular.module("angularWidgetInternal").directive("ngWidget", [ "$http", "$templ
                 });
                 widgetConfigProvider.setParentInjectorScope(scope);
                 widgetConfigProvider.setOptions(scope.options);
+                widgetConfigProvider.setIsolatedOptions(scope.isolatedOptions);
             }
             function whenTimeout(result, delay) {
                 return delay ? $timeout(function() {
@@ -362,6 +364,9 @@ angular.module("angularWidgetInternal").provider("widgetConfig", function() {
     };
     this.setOptions = function(newOptions) {
         angular.copy(newOptions, options);
+    };
+    this.setIsolatedOptions = function (isolatedOptions) {
+      options[isolatedOptions] = isolatedOptions;
     };
     this.getOptions = function() {
         return options;
