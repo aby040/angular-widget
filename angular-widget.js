@@ -366,7 +366,7 @@ angular.module("angularWidgetInternal").provider("widgetConfig", function() {
         angular.copy(newOptions, options);
     };
     this.setIsolatedOptions = function (isolatedOptions) {
-      options[isolatedOptions] = isolatedOptions;
+      options.isolatedOptions = isolatedOptions;
     };
     this.getOptions = function() {
         return options;
